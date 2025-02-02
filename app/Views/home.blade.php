@@ -4,7 +4,8 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome, <?= htmlspecialchars($name) ?>!</h1>
+    <h1>Welcome, {{ $name }}!</h1>
     <p>This is the home page.</p>
+    <a href="/about">About Us</a>
 </body>
 </html>

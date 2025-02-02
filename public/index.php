@@ -1,9 +1,8 @@
 <?php
-
+error_reporting(E_ALL & ~E_DEPRECATED);
 require __DIR__.'/../vendor/autoload.php';
 
 $app = require __DIR__.'/../bootstrap/app.php';
-
 $router = require __DIR__.'/../routes/web.php';
 
 $uri = $_SERVER['REQUEST_URI'];

@@ -1,17 +1,14 @@
 <?php
 
+use duncan3dc\Laravel\BladeInstance;
+
 if (!function_exists('view')) {
     function view($view, $data = [])
     {
-        $viewPath = __DIR__ . '/../Views/' . str_replace('.', '/', $view) . '.php';
+        $views = __DIR__ . '/../Views';
+        $cache = __DIR__ . '/../../cache';
+        $blade = new BladeInstance($views, $cache);
 
-        if (file_exists($viewPath)) {
-            extract($data);
-            ob_start();
-            require $viewPath;
-            return ob_get_clean();
-        } else {
-            return "View '{$view}' not found.";
-        }
+        return $blade->render($view, $data);
     }
 }
