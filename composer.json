@@ -1,0 +1,19 @@
+{
+    "name": "dp436/mvc-base",
+    "description": "A simple MVC-based for PHP Native project",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Dp436\\MvcBase\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dimasnotfound",
+            "email": "dp4369344@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
