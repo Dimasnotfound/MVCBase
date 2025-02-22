@@ -7,7 +7,6 @@ class App {
 
     public function __construct(){
         $url = $this->parseUrl();
-
         if (isset($url[0]) && file_exists('../app/controllers/' . ucfirst($url[0]) . 'Controller.php')) {
             $this->controller = ucfirst($url[0]) . 'Controller';
             unset($url[0]);
@@ -29,8 +28,12 @@ class App {
     }
 
     public function parseUrl(){
-        if (isset($_GET['url'])) {
-            return explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $url = explode('/', trim($uri, '/'));
+
+        if(isset($url[0]) && $url[0] == basename($_SERVER['SCRIPT_NAME'])){
+            array_shift($url);
         }
+        return $url;
     }
 }
