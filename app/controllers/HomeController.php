@@ -2,17 +2,14 @@
 
 class HomeController extends Controller {
     public function index(){
-        // Contoh penggunaan koneksi database
-        $db = new Database();
-        $conn = $db->connect();
-        // Contoh query (sesuaikan dengan kebutuhan)
-        // $stmt = $conn->prepare("SELECT * FROM table_name");
-        // $stmt->execute();
-        // $dataResult = $stmt->fetchAll();
+        // Contoh penggunaan koneksi model
+        // $userModel = new UserModel();
+        // $users = $userModel->getAllUsers();
+
 
         $data = [
             'title' => 'Home Page'
-            // 'result' => $dataResult
+            // 'result' => $users
         ];
 
         // Tampilkan view 'home' dengan data yang dikirim
