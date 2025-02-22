@@ -8,11 +8,14 @@ class HomeController extends Controller {
 
 
         $data = [
-            'title' => 'Home Page'
+            'title' => 'Home Page',
             // 'result' => $users
+            // jika memiliki css dan js tambahkan seperti berikut
+            'css' => ['home.css'],
+            'js'  => ['home.js']
         ];
 
         // Tampilkan view 'home' dengan data yang dikirim
-        $this->view('home', $data);
+        $this->view('home/index', $data);
     }
 }
